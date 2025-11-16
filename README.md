@@ -118,7 +118,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
-
 @Component
 @RequiredArgsConstructor
 public class DataSeeder implements CommandLineRunner {
@@ -187,6 +186,7 @@ public class DataSeeder implements CommandLineRunner {
         }
     }
 }
+
 2. Luồng thử nghiệm (Testing Flow)
 Sau khi khởi động cả Backend (đã có file DataSeeder.java) và Frontend:
 
@@ -256,3 +256,4 @@ GET,/,Admin,(Chỉ Admin) Lấy tất cả đơn hàng.
 GET,/{id},Admin,(Chỉ Admin) Lấy chi tiết 1 đơn hàng.
 PUT,/{id}/status,Admin,(Chỉ Admin) Cập nhật trạng thái đơn hàng.
    
+
