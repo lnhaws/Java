@@ -109,7 +109,6 @@ Backend này được thiết kế để tự động "seed" (gieo) dữ liệu 
 Java
 
 package com.example.demoSpringBoot.config;
-
 import com.example.demoSpringBoot.entity.Category;
 import com.example.demoSpringBoot.entity.User;
 import com.example.demoSpringBoot.repository.CategoryRepository;
@@ -188,6 +187,7 @@ public class DataSeeder implements CommandLineRunner {
 }
 
 2. Luồng thử nghiệm (Testing Flow)
+   
 Sau khi khởi động cả Backend (đã có file DataSeeder.java) và Frontend:
 
 Đăng nhập Admin:
@@ -226,21 +226,37 @@ Bạn cũng có thể tự đăng ký một tài khoản khách hàng hoàn toà
 Tất cả các endpoint đều có tiền tố là /api.
 
 1. Xác thực (/api/auth)
+   
    Phương thức,Endpoint,Bảo vệ,Chức năng
+   
 POST,/login,Public,"Đăng nhập, trả về (Token, Role, Username, DisplayName)."
+
 POST,/register,Public,"Đăng ký (gửi displayName, username, password, role)."
+
 GET,/me,User,Lấy thông tin chi tiết (profile) của user đang đăng nhập.
+
 GET,/users,Admin,(Chỉ Admin) Lấy danh sách tất cả user.
+
 2. Người dùng (/api/users)
+   
    Phương thức,Endpoint,Bảo vệ,Chức năng
+   
 PUT,/profile,User,"Cập nhật hồ sơ (gửi MultipartFile image, displayName, phone, address)."
+
 3. Sản phẩm (/api/products)
+   
    Phương thức,Endpoint,Bảo vệ,Chức năng
+   
 GET,/,Public,Lấy tất cả sản phẩm.
+
 GET,/{id},Public,Lấy chi tiết 1 sản phẩm.
+
 POST,/,Admin,Tạo sản phẩm mới (gửi MultipartFile image và các trường khác).
+
 PUT,/{id},Admin,Cập nhật sản phẩm (gửi MultipartFile image).
+
 DELETE,/{id},Admin,Xóa sản phẩm.
+
 4. Danh mục (/api/categories)
    Phương thức,Endpoint,Bảo vệ,Chức năng
 GET,/,Public,Lấy tất cả danh mục (dạng cây).
@@ -248,12 +264,17 @@ POST,/,Admin,"Tạo danh mục mới (gửi name, parentId)."
 PUT,/{id},Admin,Cập nhật danh mục.
 DELETE,/{id},Admin,Xóa danh mục.
 5. Đơn hàng (/api/orders)
-   Phương thức,Endpoint,Bảo vệ,Chức năng
-POST,/,User,Tạo đơn hàng mới (Checkout).
-GET,/my-orders,User,Lấy lịch sử đơn hàng của user đang đăng nhập.
-PUT,/{id}/cancel,User,"Hủy đơn hàng (chỉ khi status là ""pending"")."
-GET,/,Admin,(Chỉ Admin) Lấy tất cả đơn hàng.
-GET,/{id},Admin,(Chỉ Admin) Lấy chi tiết 1 đơn hàng.
-PUT,/{id}/status,Admin,(Chỉ Admin) Cập nhật trạng thái đơn hàng.
    
+   Phương thức,Endpoint,Bảo vệ,Chức năng
+   
+POST,/,User,Tạo đơn hàng mới (Checkout).
 
+GET,/my-orders,User,Lấy lịch sử đơn hàng của user đang đăng nhập.
+
+PUT,/{id}/cancel,User,"Hủy đơn hàng (chỉ khi status là ""pending"")."
+
+GET,/,Admin,(Chỉ Admin) Lấy tất cả đơn hàng.
+
+GET,/{id},Admin,(Chỉ Admin) Lấy chi tiết 1 đơn hàng.
+
+PUT,/{id}/status,Admin,(Chỉ Admin) Cập nhật trạng thái đơn hàng.
