@@ -56,7 +56,9 @@ Properties
 
 # Cấu hình kết nối MySQL
 spring.datasource.url=jdbc:mysql://localhost:3306/fruitshop_db
+
 spring.datasource.username=root
+
 spring.datasource.password=matkhaucuaban
 
 # (Quan trọng) Tự động tạo/cập nhật bảng khi chạy
@@ -97,12 +99,15 @@ Chạy: npm start
 Trang web sẽ tự động mở tại http://localhost:3000.
 
 3. 📂 Thư mục uploads (Quan trọng)
+
 Để upload ảnh (avatar, sản phẩm) hoạt động, bạn cần tự tạo một thư mục tên là uploads ngang hàng với thư mục src trong dự án Spring Boot của bạn.
 
 🧪 Hướng dẫn Sử dụng & Dữ liệu mẫu (Seed Data)
+
 Backend này được thiết kế để tự động "seed" (gieo) dữ liệu quan trọng khi khởi động lần đầu, bao gồm tài khoản Admin, User mẫu và các Danh mục gốc.
 
 1. Tạo file Seed Data
+
 Để tự động tạo dữ liệu mẫu, hãy tạo một tệp mới tại src/main/java/com/example/demoSpringBoot/config/DataSeeder.java.
 
 📄 DataSeeder.java (Tệp mới)
@@ -279,4 +284,5 @@ GET,/,Admin,(Chỉ Admin) Lấy tất cả đơn hàng.
 GET,/{id},Admin,(Chỉ Admin) Lấy chi tiết 1 đơn hàng.
 
 PUT,/{id}/status,Admin,(Chỉ Admin) Cập nhật trạng thái đơn hàng.
+
 
