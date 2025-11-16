@@ -1,4 +1,5 @@
 🍓 Dự án FruitShop (React + Spring Boot)
+
 Đây là một dự án website thương mại điện tử Full-Stack hoàn chỉnh, xây dựng bằng React.js (Frontend) và Spring Boot (Backend). Dự án mô phỏng một cửa hàng trực tuyến chuyên bán trái cây, nước ép và các sản phẩm liên quan.
 
 ✨ Tính năng chính
@@ -278,3 +279,4 @@ GET,/,Admin,(Chỉ Admin) Lấy tất cả đơn hàng.
 GET,/{id},Admin,(Chỉ Admin) Lấy chi tiết 1 đơn hàng.
 
 PUT,/{id}/status,Admin,(Chỉ Admin) Cập nhật trạng thái đơn hàng.
+
