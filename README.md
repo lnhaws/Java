@@ -112,7 +112,6 @@ Backend này được thiết kế để tự động "seed" (gieo) dữ liệu 
 
 📄 DataSeeder.java (Tệp mới)
 
-```java
 package com.example.demoSpringBoot.config;
 
 import com.example.demoSpringBoot.entity.Category;
@@ -285,6 +284,7 @@ GET,/,Admin,(Chỉ Admin) Lấy tất cả đơn hàng.
 GET,/{id},Admin,(Chỉ Admin) Lấy chi tiết 1 đơn hàng.
 
 PUT,/{id}/status,Admin,(Chỉ Admin) Cập nhật trạng thái đơn hàng.
+
 
 
 
