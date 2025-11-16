@@ -112,9 +112,9 @@ Backend này được thiết kế để tự động "seed" (gieo) dữ liệu 
 
 📄 DataSeeder.java (Tệp mới)
 
-Java
-
+```java
 package com.example.demoSpringBoot.config;
+
 import com.example.demoSpringBoot.entity.Category;
 import com.example.demoSpringBoot.entity.User;
 import com.example.demoSpringBoot.repository.CategoryRepository;
@@ -123,6 +123,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+
 @Component
 @RequiredArgsConstructor
 public class DataSeeder implements CommandLineRunner {
@@ -141,24 +142,24 @@ public class DataSeeder implements CommandLineRunner {
         if (userRepository.count() == 0) { // Chỉ seed nếu bảng user trống
             // Tạo Admin
             User admin = User.builder()
-                    .username("admin")
-                    .password(passwordEncoder.encode("admin123"))
-                    .displayName("Quản Trị Viên")
-                    .role("ADMIN")
-                    .phone("0123456789")
-                    .address("123 Admin St, Admin City")
-                    .build();
+                .username("admin")
+                .password(passwordEncoder.encode("admin123"))
+                .displayName("Quản Trị Viên")
+                .role("ADMIN")
+                .phone("0123456789")
+                .address("123 Admin St, Admin City")
+                .build();
             userRepository.save(admin);
             
             // Tạo User mẫu
             User user = User.builder()
-                    .username("user")
-                    .password(passwordEncoder.encode("user123"))
-                    .displayName("Người Dùng")
-                    .role("USER")
-                    .phone("0987654321")
-                    .address("123 User St, User City")
-                    .build();
+                .username("user")
+                .password(passwordEncoder.encode("user123"))
+                .displayName("Người Dùng")
+                .role("USER")
+                .phone("0987654321")
+                .address("123 User St, User City")
+                .build();
             userRepository.save(user);
         }
     }
@@ -284,5 +285,6 @@ GET,/,Admin,(Chỉ Admin) Lấy tất cả đơn hàng.
 GET,/{id},Admin,(Chỉ Admin) Lấy chi tiết 1 đơn hàng.
 
 PUT,/{id}/status,Admin,(Chỉ Admin) Cập nhật trạng thái đơn hàng.
+
 
 
