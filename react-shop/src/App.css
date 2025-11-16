@@ -1,0 +1,17 @@
+body {
+  background-color: #f9fafb;
+  font-family: "Segoe UI", sans-serif;
+}
+
+h2 {
+  letter-spacing: 0.5px;
+}
+
+.table th,
+.table td {
+  vertical-align: middle !important;
+}
+
+.btn {
+  border-radius: 8px;
+}
