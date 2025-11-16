@@ -167,19 +167,21 @@ public class DataSeeder implements CommandLineRunner {
         }
     }
 }
+
+
+
 2. Cách thử nghiệm
 Khởi động Backend và Frontend.
 
 Đăng ký tài khoản User: Tự đăng ký một tài khoản khách hàng mới (ví dụ: "user_test" / "123456").
 
-Đăng ký tài khoản Admin trên Posman: http://localhost:3000/api/auth/register (ví dụ: Username: admin / "123456").
 Đăng nhập Admin:
 
 Đi đến http://localhost:3000/admin/login
 
 Username: admin
 
-Password: 123456
+Password: admin123
 
 Tạo sản phẩm: Dùng tài khoản Admin, vào "Quản lý Sản phẩm" và tạo một vài sản phẩm (nhớ chọn đúng danh mục con như "Táo", "Nước ép Cam").
 Mua hàng: Đăng xuất Admin, đăng nhập bằng tài khoản "user_test" và bắt đầu mua sắm.
@@ -220,3 +222,4 @@ PUT,/{id}/cancel,User,"Hủy đơn hàng (chỉ khi status là ""pending"")."
 GET,/,Admin,(Chỉ Admin) Lấy tất cả đơn hàng.
 GET,/{id},Admin,(Chỉ Admin) Lấy chi tiết 1 đơn hàng.
 PUT,/{id}/status,Admin,(Chỉ Admin) Cập nhật trạng thái đơn hàng.
+
